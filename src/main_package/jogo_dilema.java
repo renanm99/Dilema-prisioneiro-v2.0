@@ -444,7 +444,7 @@ public class jogo_dilema {
                                 }while(erro);
 
 
-                                //else do teste para ver se digitou corretamente
+                                //else do teste para saber se digitou corretamente
                                 }else{
                                     System.out.println("Digitou algo errado. Tente novamente!");   
                                     er++;
