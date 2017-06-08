@@ -5,6 +5,8 @@
  */
 package graphic_package;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author renan
@@ -16,8 +18,10 @@ public class tela_jogo extends javax.swing.JFrame {
      */
     public tela_jogo() {
         initComponents();
-        jLabel1.setText("Você e seu parceiro foram detidos \n"
-                + "E a");
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(this.DO_NOTHING_ON_CLOSE);
+        String jogador = JOptionPane.showInputDialog("Digite o nome do jogador: ","Jogador 1");
+        jLabel1.setText(jogador);
     }
 
     /**
@@ -30,21 +34,42 @@ public class tela_jogo extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jTextArea1 = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Myanmar Text", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel1.setText("Dilema do Prisioneiro");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, -1, -1));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/graphic_package/imgs/arrow-down.png"))); // NOI18N
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 430, 60, -1));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 51));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 170, -1, -1));
+
+        jTextArea1.setEditable(false);
+        jTextArea1.setBackground(new java.awt.Color(0, 0, 0));
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Gill Sans MT", 1, 14)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(240, 240, 240));
+        jTextArea1.setLineWrap(true);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("Você e seu comparsa foram detidos, e estão cada um em uma sala de interrogatório diferente Os dois não podem se falar e nem combinaram nada antes do interrogatório. Por isso você deve escolher se entrega seu comparsa, ou se fica calado e não ajuda com as investigações. O seu parceiro terá de fazer sua escolha a seu respeito também.");
+        jTextArea1.setWrapStyleWord(true);
+        jPanel1.add(jTextArea1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, 480, 120));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/graphic_package/imgs/27f19374974e8a2c18dae2f6fde5260a.jpg"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 480));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -59,6 +84,13 @@ public class tela_jogo extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        int a = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja sair?","sair",JOptionPane.YES_NO_OPTION);
+        if(a == JOptionPane.YES_OPTION){
+            System.exit(0);
+        }
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments
@@ -96,8 +128,10 @@ public class tela_jogo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
