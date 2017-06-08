@@ -1,4 +1,4 @@
-# Dilema-do-Prisioneiro
+# Dilema-do-Prisioneiro V2
 Jogo Dilema do Prisioneiro
 
 Este é um jogo em texto baseado em escolhas
