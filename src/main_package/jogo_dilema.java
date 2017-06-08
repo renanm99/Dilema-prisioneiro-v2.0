@@ -414,7 +414,8 @@ public class jogo_dilema {
                             erro = true;
                         }
                     }while(erro);
-                    
+
+
                 }//while(jogo)
                 System.out.println("\n\n");
                 System.out.println("Jogador: "+ nome);
@@ -428,6 +429,7 @@ public class jogo_dilema {
                 teste e comparaçao de porcentagem
                 */
 }
+    
     
     public static int mensagens(int res, int comparsa, int cc, int tt, int tc){
         if(res == 0 && comparsa == 0){
@@ -461,6 +463,7 @@ public class jogo_dilema {
             return 3;
         }
     }
+    
 }
         
 //fim de classe
